@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Yang Liu's Personal Page</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.poptrox.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+		
+	</head>YL
+	<body id="top">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="#" class="image avatar"><img src="images/Yphoto.jpg" alt="" /></a>
+                <h1 style="color:black;">Yang Liu</h1><hr>
+                
+               
+                <p>Major:<span>C</span>omputer <span>S</span>cience  </p>
+                <p>2012-so far: <span>R</span>enmin <span>U</span>niversity of <span>C</span>hina, </p>
+                <p style="margin-left:70px;">School of Information</p>
+                <p>2014.9-2015.6: <span>U</span>niversity of <span>C</span>alifornia,<span>S</span>an <span>D</span>iego</p>
+                <hr>
+              
+                
+			</header>
+
+		<!-- Main -->
+			<div id="main">
+                <nav id="mainNav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Blog</a></li>    
+                <li><a href="#">Project</a></li>
+                <li><a href="#">Contact Me</a></li>
+            </ul>
+        </nav>
+
+					
+                     
+                 <div><img  id="showBox" src="images/1.jpg"/>
+
+				</div>
+                <p style="position:relative; margin-top:61%;background-color:#303030">The world is changing while you're just a stardust. The earth turns arround with or without you. Reality doesn't change according to your will.</p>
+				
+			</div>
+
+		<!-- Footer -->
+    
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+					<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+					<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+				</ul>
+				
+			</footer>
+
+	</body>
+    <script>
+        var length=5;
+        var index=1;
+        var timer;
+        var img=document.getElementById("showBox");
+        function changeImg(){
+            img.setAttribute("src","images/"+index+".jpg");
+        }
+        function change(){
+            changeImg();
+            index=(index+1)%length;
+        }
+        img.onmouseover=function(){
+            clearInterval(timer);
+            width=parseInt(img.width);
+            height=parseInt(img.height);
+            width=1.25*width;
+            height=1.25*height;
+            widthString=width+"px;";
+            heightString=height+"px;";
+            styleString="width:"+widthString+"height:"+heightString+"margin:20px;";
+            img.setAttribute("style",styleString);
+            
+            console.log(img.style.width);
+        }
+        img.onmouseout=function(){
+            timer=setInterval(change,1000);
+             width=parseInt(img.width);
+            height=parseInt(img.height);
+            width=0.8*width;
+            height=0.8*height;
+            widthString=width+"px;";
+            heightString=height+"px;";
+            styleString="width:"+widthString+"height:"+heightString;
+            img.setAttribute("style",styleString);
+            
+        }
+        timer=setInterval(change,1000);
+    </script>
+</html>
