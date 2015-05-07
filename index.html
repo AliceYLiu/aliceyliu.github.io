@@ -78,6 +78,8 @@
         function change(){
             changeImg();
             index=(index+1)%length;
+            if(index==1)
+            	index++;
         }
         img.onmouseover=function(){
             clearInterval(timer);
